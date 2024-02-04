@@ -15,6 +15,7 @@ class Gallery {
     this.container = element;
     this.list = [...element.querySelectorAll(".section__img")];
 
+    this.body = getElement("body");
     this.modalWindow = getElement(".modal");
     this.modalImg = getElement(".modal__main-img");
     this.restImgs = getElement(".rest");
@@ -52,6 +53,7 @@ class Gallery {
       })
       .join("");
 
+    this.body.classList.add("body--lock");
     this.modalWindow.classList.add("modal--active");
     this.closeBtn.addEventListener("click", this.closeModal);
     this.leftBtn.addEventListener("click", this.prevImg);
@@ -64,6 +66,7 @@ class Gallery {
   }
 
   closeModal() {
+    this.body.classList.remove("body--lock");
     this.modalWindow.classList.remove("modal--active");
     this.closeBtn.removeEventListener("click", this.closeModal);
     this.rightBtn.removeEventListener("click", this.nextImg);
@@ -100,6 +103,16 @@ class Gallery {
     this.setImgToMain(e.target);
   }
 }
+
+const body = document.body;
+const preloader = document.querySelector(".preloader");
+const preloaderImg = document.querySelector(".preloader > img");
+
+window.addEventListener("load", function () {
+  body.classList.remove("body--lock");
+  preloader.classList.add("de-active");
+  preloaderImg.src = "";
+});
 
 const space = new Gallery(getElement(".space"));
 const mountain = new Gallery(getElement(".mountain"));
