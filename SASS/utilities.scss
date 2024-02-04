@@ -1,3 +1,8 @@
 .modal--active {
-  display: block;
+  opacity: 1;
+  z-index: 10;
+}
+
+.rest .selected {
+  filter: brightness(1);
 }

@@ -30,6 +30,8 @@ li {
 
 :root {
   --body-bk-clr: hsl(0, 0%, 10%);
+  --body-scroll-bar-thumb-clr: hsl(0, 0%, 90%);
+  --modal-window-bk-clr: hsl(0, 0%, 10%);
   --white-clr: hsl(0, 0%, 100%);
   --black-clr: hsl(0, 0%, 0%); }
 
@@ -52,6 +54,15 @@ body {
   grid-template-columns: 1fr;
   gap: 1rem; }
 
+body::-webkit-scrollbar {
+  width: 0.25rem; }
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--body-scroll-bar-thumb-clr); }
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; }
+
 .main {
   margin-block: 4rem; }
   .main__container {
@@ -71,8 +82,9 @@ body {
 .modal {
   position: fixed;
   inset: 0;
-  background-color: var(--black-clr);
-  display: none; }
+  background-color: var(--modal-window-bk-clr);
+  z-index: -10;
+  opacity: 0; }
   .modal__container {
     position: relative;
     height: 100%;
@@ -106,7 +118,8 @@ body {
   gap: 0.75rem; }
   .modal .rest__img {
     width: 9rem;
-    height: 5rem; }
+    height: 5rem;
+    filter: brightness(0.3); }
 
 .modal .rest::-webkit-scrollbar {
   display: none; }
@@ -127,7 +140,11 @@ body {
   right: 3%; }
 
 .modal--active {
-  display: block; }
+  opacity: 1;
+  z-index: 10; }
+
+.rest .selected {
+  filter: brightness(1); }
 
 @media only screen and (hover: hover) {
   .section__img {
@@ -138,7 +155,6 @@ body {
     transform: scale(1.05); }
   .rest__img {
     cursor: pointer;
-    filter: brightness(0.3);
     transition: filter 0.3s; }
   .rest__img:hover {
     filter: brightness(1); } }

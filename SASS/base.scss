@@ -36,6 +36,8 @@ li {
 
 :root {
   --body-bk-clr: hsl(0, 0%, 10%);
+  --body-scroll-bar-thumb-clr: hsl(0, 0%, 90%);
+  --modal-window-bk-clr: hsl(0, 0%, 10%);
   --white-clr: hsl(0, 0%, 100%);
   --black-clr: hsl(0, 0%, 0%);
 }
@@ -61,4 +63,16 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--body-scroll-bar-thumb-clr);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
 }
