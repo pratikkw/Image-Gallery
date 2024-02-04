@@ -13,7 +13,7 @@ const getElement = function (ele) {
 class Gallery {
   constructor(element) {
     this.container = element;
-    this.list = [...this.container.querySelectorAll(".section__img")];
+    this.list = [...element.querySelectorAll(".section__img")];
 
     this.modalWindow = getElement(".modal");
     this.modalImg = getElement(".modal__main-img");
@@ -34,21 +34,15 @@ class Gallery {
         this.openModal(e.target, this.list);
       }.bind(this)
     );
-
-    this.closeBtn.addEventListener("click", this.closeModal);
-    this.leftBtn.addEventListener("click", this.prevImg);
-    this.rightBtn.addEventListener("click", this.nextImg);
-    this.restImgs.addEventListener("click", this.chooseImg);
   }
 
   openModal(target, arrayImg) {
-    this.modalWindow.classList.add("modal--active");
     this.setImgToMain(target);
 
     this.restImgs.innerHTML = arrayImg
       .map((item) => {
         return `<img src="${item.src}" title="${item.title}" alt="${item.alt}"
-      data-image=${item.dataset.img}
+      data-img=${item.dataset.img}
        class="${
          target.dataset.img === item.dataset.img
            ? "rest__img selected"
@@ -57,6 +51,12 @@ class Gallery {
       `;
       })
       .join("");
+
+    this.modalWindow.classList.add("modal--active");
+    this.closeBtn.addEventListener("click", this.closeModal);
+    this.leftBtn.addEventListener("click", this.prevImg);
+    this.rightBtn.addEventListener("click", this.nextImg);
+    this.restImgs.addEventListener("click", this.chooseImg);
   }
 
   setImgToMain(item) {
@@ -65,6 +65,10 @@ class Gallery {
 
   closeModal() {
     this.modalWindow.classList.remove("modal--active");
+    this.closeBtn.removeEventListener("click", this.closeModal);
+    this.rightBtn.removeEventListener("click", this.nextImg);
+    this.leftBtn.removeEventListener("click", this.prevImg);
+    this.restImgs.removeEventListener("click", this.chooseImg);
   }
 
   prevImg() {
@@ -97,6 +101,5 @@ class Gallery {
   }
 }
 
-const car = new Gallery(getElement(".car"));
 const space = new Gallery(getElement(".space"));
 const mountain = new Gallery(getElement(".mountain"));
