@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/style.css" />
+
+    <!-- JS -->
+    <script type="module" src="JS/script.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main__container">
+        <section class="section car">
+          <div class="section__container grid">
+            <img
+              src="Image/car-1.webp"
+              title="Car One"
+              alt="Car"
+              data-img="0"
+              class="section__img"
+            />
+            <img
+              src="Image/car-2.webp"
+              title="Car Two"
+              alt="Car"
+              data-img="1"
+              class="section__img"
+            />
+            <img
+              src="Image/car-3.webp"
+              title="Car Three"
+              alt="Car"
+              data-img="2"
+              class="section__img"
+            />
+            <img
+              src="Image/car-4.webp"
+              title="Car Four"
+              alt="Car"
+              data-img="3"
+              class="section__img"
+            />
+            <img
+              src="Image/car-5.webp"
+              title="Car Five"
+              alt="Car"
+              data-img="4"
+              class="section__img"
+            />
+          </div>
+        </section>
+
+        <section class="section space">
+          <div class="section__container grid">
+            <img
+              src="Image/space-1.webp"
+              title="Space One"
+              alt="Space"
+              data-img="0"
+              class="section__img"
+            />
+            <img
+              src="Image/space-2.webp"
+              title="Space Two"
+              alt="Space"
+              data-img="1"
+              class="section__img"
+            />
+            <img
+              src="Image/space-3.jpg"
+              title="Space Three"
+              alt="Space"
+              data-img="2"
+              class="section__img"
+            />
+            <img
+              src="Image/space-4.webp"
+              title="Space Four"
+              alt="Space"
+              data-img="3"
+              class="section__img"
+            />
+            <img
+              src="Image/space-5.webp"
+              title="Space Five"
+              alt="Space"
+              data-img="4"
+              class="section__img"
+            />
+            <img
+              src="Image/space-6.jpg"
+              title="Space Six"
+              alt="Space"
+              data-img="5"
+              class="section__img"
+            />
+            <img
+              src="Image/space-7.jpg"
+              title="Space Seven"
+              alt="Space"
+              data-img="6"
+              class="section__img"
+            />
+            <img
+              src="Image/space-8.jpg"
+              title="Space Eight"
+              alt="Space"
+              data-img="7"
+              class="section__img"
+            />
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal">
+      <div class="modal__container grid">
+        <button class="close">
+          <ion-icon name="close-outline" class="close__icon"></ion-icon>
+        </button>
+        <div class="modal__sub-container grid">
+          <img src="Image/space-3.jpg" alt="" class="modal__main-img" />
+
+          <div class="rest flex">
+            <img src="Image/car-1.webp" alt="" class="rest__img" />
+            <img src="Image/car-2.webp" alt="" class="rest__img" />
+            <img src="Image/car-3.webp" alt="" class="rest__img" />
+            <img src="Image/car-4.webp" alt="" class="rest__img" />
+          </div>
+        </div>
+
+        <button class="arr left">
+          <ion-icon name="chevron-back-outline" class="arr__icon"></ion-icon>
+        </button>
+        <button class="arr right">
+          <ion-icon name="chevron-forward-outline" class="arr__icon"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>

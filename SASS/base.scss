@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+textarea,
+input,
+select {
+  font: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+:root {
+  --body-bk-clr: hsl(0, 0%, 10%);
+  --white-clr: hsl(0, 0%, 100%);
+  --black-clr: hsl(0, 0%, 0%);
+}
+
+body {
+  min-height: 100dvh;
+  position: relative;
+  isolation: isolate;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--body-bk-clr);
+  color: var(--white-clr);
+
+  display: grid;
+  align-content: center;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
